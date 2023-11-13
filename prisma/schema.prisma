@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Drivers {
+  id       String     @id @default(uuid())
+  cpf      String
+  name     String
+  Supplies Supplies[]
+}
+
+model Supplies {
+  id       String   @id @default(uuid())
+  date     DateTime @default(now())
+  amount   Float
+  liters   Float
+  fuelType FuelType
+  driver   Drivers  @relation(fields: [driverId], references: [id])
+  driverId String
+}
+
+enum FuelType {
+  GASOLINA
+  VPOWER
+  ETANOL
+  DISEL
+}
