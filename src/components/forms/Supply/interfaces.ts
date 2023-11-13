@@ -1,7 +1,7 @@
 export type TFormInputs = {
   cpf: String;
-  amount:   Number,
-  liters:  Number,
+  amount:   number,
+  liters:  number,
   fuelType: FuelType
 };
 

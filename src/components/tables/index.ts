@@ -1,1 +1,1 @@
-export {default as SuppliesTable} from './SuppliesTable'
+export { default as SuppliesTable } from './SuppliesTable';

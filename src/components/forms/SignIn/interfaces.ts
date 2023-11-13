@@ -1,10 +1,9 @@
 export type TFormInputs = {
-  cpf: String;
+    cpf: string;
 };
 
-
-export interface IResponseBody  {
-  id: String;
-  cpf: String;
-  name: String;
-};
+export interface IResponseBody {
+    id: string;
+    cpf: string;
+    name: string;
+}

@@ -1,5 +1,5 @@
-export interface IAccessCard  {
-  footerText: String,
-  footerHref: String,
-  children: JSX.Element,
+export interface IAccessCard {
+    footerText: string;
+    footerHref: string;
+    children: JSX.Element;
 }

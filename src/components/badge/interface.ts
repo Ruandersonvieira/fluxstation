@@ -1,3 +1,3 @@
 export interface IBedge {
-  fuelType: String
+    fuelType: string;
 }

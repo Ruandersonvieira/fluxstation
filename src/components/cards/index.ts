@@ -1,1 +1,1 @@
-export {default as AccessCard } from './accessCard'
+export { default as AccessCard } from './accessCard';

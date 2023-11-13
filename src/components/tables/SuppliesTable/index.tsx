@@ -2,62 +2,69 @@ import React from 'react';
 import { format } from 'date-fns';
 
 import {
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  TableContainer,
-  Flex,
-  Text,
-} from '@chakra-ui/react'
+    Table,
+    Thead,
+    Tbody,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    TableContainer,
+    Text,
+} from '@chakra-ui/react';
 
-import {  Badge} from '@/components/badge'
+import { Badge } from '@/components/badge';
 
-const SuppliesTable = ({data}) => {
-  
-  return (
+import { ISuppliesTable } from './interfaces';
 
-    <TableContainer>
-  <Table variant='striped' colorScheme='teal'>
-    <TableCaption> Totalizando R${data.reduce((acc, obj) => acc += obj.amount, 0)} Abastecido</TableCaption>
-    <Thead>
-      <Tr>
-        <Th>Data</Th>
-        <Th>Tipo de Gasolina</Th>
-        <Th>Litros</Th>
-        <Th isNumeric>Valor</Th>
-        <Th>Média</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-    {data.map(({id, date, amount,liters, fuelType}) => {
-
-
-return (<Tr key={id}>
-  <Th>{
-  format(new Date(date), 'dd/MM/yyyy ', {
-  timeZone: 'America/Sao_Paulo',
-})
-}
-</Th>
-  <Td><Badge fuelType={fuelType}>{fuelType}</Badge></Td>
-  <Th isNumeric>{liters}l</Th>
-  <Th isNumeric>R${amount}</Th>
-  <Th isNumeric>R${(liters/amount).toFixed(2)}/L</Th>
-
-</Tr>
-)
-      })}
-    
-    </Tbody>
-  </Table>
-</TableContainer>
-
-  );
-}
+const SuppliesTable = ({ data }: ISuppliesTable) => {
+    const getAverage = (liters: number, amount: number) => {
+        const value = liters / amount;
+        return `R${value.toFixed(2)}/L`;
+    };
+    return (
+        <TableContainer>
+            <Table variant="striped" colorScheme="teal">
+                <Thead>
+                    <Tr>
+                        <Th>Data</Th>
+                        <Th>Tipo de Gasolina</Th>
+                        <Th>Litros</Th>
+                        <Th isNumeric>Valor</Th>
+                        <Th>Média</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    {data.map(({ id, date, amount, liters, fuelType }) => {
+                        return (
+                            <Tr key={id}>
+                                <Th>
+                                    <Text>
+                                    {format(new Date(date), 'dd/MM/yyyy ')}
+                                        </Text>
+                                        </Th>
+                                <Td>
+                                    <Badge fuelType={fuelType}>
+                                        {fuelType}
+                                    </Badge>
+                                </Td>
+                                <Th isNumeric>{String(liters)}l</Th>
+                                <Th isNumeric>R${String(amount)}</Th>
+                                <Th isNumeric>
+                                    {getAverage(liters, amount)}
+                                </Th>
+                            </Tr>
+                        );
+                    })}
+                </Tbody>
+                <TableCaption>
+                    {`Totalizando R$${data.reduce(
+                        (acc, {amount}) => (acc + amount), 0)
+                    } Abastecido`}
+                </TableCaption>
+            </Table>
+        </TableContainer>
+    );
+};
 
 export default SuppliesTable;

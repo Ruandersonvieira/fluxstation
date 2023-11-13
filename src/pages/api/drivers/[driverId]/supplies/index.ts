@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../../../../lib/prisma';
 
 interface IReqQuery {
-        driverId?: String,
+        driverId?: string,
 }
 
 const index = async (req: NextApiRequest, res: NextApiResponse) => {

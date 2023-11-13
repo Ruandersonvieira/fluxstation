@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../../lib/prisma';
 
 interface IReqBody {
-        cpf?: String,
+        cpf?: string,
 }
 
 const get = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -14,7 +14,7 @@ const get = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const result = await prisma.drivers.findFirst({
         where: {
-           cpf: cpf,
+           cpf,
         },
     });
 
