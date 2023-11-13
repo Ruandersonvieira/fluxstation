@@ -31,5 +31,5 @@ enum FuelType {
   GASOLINA
   VPOWER
   ETANOL
-  DISEL
+  DIESEL
 }

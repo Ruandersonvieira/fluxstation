@@ -19,9 +19,9 @@ const create = async (req: NextApiRequest, res: NextApiResponse) => {
 
     await prisma.supplies.create({
         data: {
-            amount,
+            amount: Number(amount),
             fuelType,
-            liters,
+            liters: Number(liters),
             driverId,
         },
     });

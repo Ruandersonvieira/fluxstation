@@ -8,7 +8,7 @@ export const Badge: React.FC = ({ fuelType }: IBedge) => {
         VPOWER: 'red',
         GASOLINA: 'yellow',
         ETANOL: 'green',
-        DISEL: 'purple',
+        DIESEL: 'purple',
     };
 
     return (

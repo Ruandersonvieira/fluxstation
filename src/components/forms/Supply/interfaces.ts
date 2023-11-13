@@ -1,5 +1,5 @@
 export type TFormInputs = {
-  cpf: String;
+  cpf: string;
   amount:   number,
   liters:  number,
   fuelType: FuelType
@@ -9,10 +9,10 @@ enum FuelType {
   GASOLINA= "GASOLINA",
   VPOWER= "VPOWER",
   ETANOL= "ETANOL",
-  DISEL = "DISEL"
+  DIESEL = "DIESEL"
 } 
 
 
 export interface IResponseBody  {
-  id: String;
+  id: string;
 };

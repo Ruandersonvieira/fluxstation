@@ -20,7 +20,7 @@ import { ISuppliesTable } from './interfaces';
 const SuppliesTable = ({ data }: ISuppliesTable) => {
     const getAverage = (liters: number, amount: number) => {
         const value = liters / amount;
-        return `R${value.toFixed(2)}/L`;
+        return `R$ ${value.toFixed(2)}/L`;
     };
     return (
         <TableContainer>
@@ -58,7 +58,7 @@ const SuppliesTable = ({ data }: ISuppliesTable) => {
                     })}
                 </Tbody>
                 <TableCaption>
-                    {`Totalizando R$${data.reduce(
+                    {`Totalizando R$ ${data.reduce(
                         (acc, {amount}) => (acc + amount), 0)
                     } Abastecido`}
                 </TableCaption>

@@ -11,7 +11,7 @@ const Select = ({ name, ...props }: IInputProps) => {
             <option value="GASOLINA">GASOLINA</option>
             <option value="VPOWER">VPOWER</option>
             <option value="ETANOL">ETANOL</option>
-            <option value="DISEL">DISEL</option>
+            <option value="DIESEL">DIESEL</option>
         </ChakraSelect>
     );
 };

@@ -8,6 +8,7 @@ import Select from '@/components/Select';
 import { useRouter } from 'next/navigation';
 
 import { TFormInputs } from './interfaces';
+import { FuelType } from '@prisma/client';
 
 const SupplyForm = () => {
     const { refresh } = useRouter();
@@ -41,9 +42,7 @@ const SupplyForm = () => {
         <Flex py="5">
             <Formik
                 initialValues={{
-                    amount: '',
-                    liters: '',
-                    fuelType: 'GASOLINA',
+                    fuelType: FuelType.GASOLINA,
                 }}
                 onSubmit={handleSubmmit}
             >
@@ -62,7 +61,7 @@ const SupplyForm = () => {
                         </Flex>
 
                         <Flex px="20">
-                            <Input name="liters" />
+                            <Input name="liters"  />
                         </Flex>
 
                         <Flex px="20">

@@ -14,5 +14,5 @@ enum FuelType {
     GASOLINA = 'GASOLINA',
     VPOWER = 'VPOWER',
     ETANOL = 'ETANOL',
-    DISEL = 'DISEL',
+    DIESEL = 'DIESEL',
 }

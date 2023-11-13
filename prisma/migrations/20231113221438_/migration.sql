@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "FuelType" AS ENUM ('GASOLINA', 'VPOWER', 'ETANOL', 'DISEL');
+CREATE TYPE "FuelType" AS ENUM ('GASOLINA', 'VPOWER', 'ETANOL', 'DIESEL');
 
 -- CreateTable
 CREATE TABLE "Drivers" (
